@@ -346,7 +346,7 @@ body, section {
 .internal-img {
     border: 1px dashed #00B98E;
     border-radius: 50%; /* Use percentage for a perfect circle */
-    width: 50px; /* Fixed width */
+    width: 66px; /* Fixed width */
     height: 50px; /* Fixed height to match width */
     display: flex; /* Use flexbox to center the image */
     justify-content: center;
@@ -1190,7 +1190,7 @@ hr {
     }
 
     .internal-img {
-        width: 40px;
+        width: 35px;
         height: 40px; /* Match width for smaller screens */
         margin-top: 15px;
     }
