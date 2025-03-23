@@ -8,10 +8,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Navbar Section */
 .navsection {
     position: sticky;
     margin: 0 80px;
-    z-index: 1;
+    z-index: 1000; /* Increased z-index to ensure navbar stays on top */
     top: 0;
     background-color: white;
 }
@@ -145,6 +146,7 @@ html {
     background-color: #e9ecef;
 }
 
+/* Banner Section */
 .banner {
     display: flex;
     position: relative;
@@ -237,6 +239,7 @@ html {
     background-color: #0E2E50;
 }
 
+/* Search Bar Section */
 .search-bar {
     background-color: #00B98E;
     padding: 35px;
@@ -278,6 +281,7 @@ html {
     margin-left: 10px;
 }
 
+/* Property Types Section */
 .property-h1 {
     font-size: 40px;
     color: #0E2E50;
@@ -302,6 +306,7 @@ html {
     margin: 40px 50px 20px;
     background-color: white;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .flexbox-2 {
@@ -344,6 +349,11 @@ html {
     background-color: white;
 }
 
+.internal-img img {
+    width: 45px;
+    height: auto;
+}
+
 .flex-heading {
     color: #0E2E50;
     font-size: 16px;
@@ -360,6 +370,7 @@ html {
     font-family: "Heebo", "sans-serif";
 }
 
+/* About Section (Photo Section) */
 .photosection {
     display: flex;
     margin: 90px 50px;
@@ -370,6 +381,7 @@ html {
     position: relative;
     overflow: hidden;
     flex: 1;
+    z-index: 1; /* Ensure this section stays below the navbar */
 }
 
 .half-div {
@@ -393,7 +405,7 @@ html {
     max-width: 100%;
     height: auto;
     position: relative;
-    z-index: 99;
+    z-index: 2; /* Ensure image stays above the pseudo-element but below navbar */
 }
 
 .photo-text {
@@ -438,10 +450,12 @@ html {
     margin-left: 50px;
 }
 
+/* Property Listing Section */
 .property-photo {
     display: flex;
     justify-content: space-between;
     margin: 0 50px;
+    align-items: center;
 }
 
 .property-text {
@@ -450,10 +464,8 @@ html {
 
 .property-btn {
     width: 50%;
-    margin-right: 72px;
     text-align: end;
     position: relative;
-    margin-top: 172px;
 }
 
 .property-btn-1 {
@@ -607,6 +619,7 @@ html {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+/* Appointment Section */
 .Appointment-container {
     margin: 0 80px;
     background-color: #EFFDF5;
@@ -666,6 +679,7 @@ html {
     margin: 5px;
 }
 
+/* Property Agents Section */
 .Agent-tile-container {
     margin: 20px 0;
 }
@@ -751,6 +765,7 @@ html {
     text-align: center;
 }
 
+/* Testimonial Section */
 .testimonial-section {
     display: flex;
     justify-content: space-around;
@@ -825,6 +840,7 @@ html {
     background-color: #0E2E50;
 }
 
+/* Footer Section */
 .footer {
     background-color: #0E2E50;
     margin-top: 50px;
@@ -1012,7 +1028,7 @@ hr {
     color: white;
 }
 
-/* Media Queries */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .navsection {
         margin: 0 20px;
@@ -1090,7 +1106,7 @@ hr {
 
     .banner {
         flex-direction: column;
-        margin-top: 60px; /* Adjust for navbar height */
+        margin-top: 60px;
     }
 
     .column1,
@@ -1118,7 +1134,7 @@ hr {
 
     .center-icons,
     .center-icons-2 {
-        display: none; /* Hide navigation icons on mobile */
+        display: none;
     }
 
     .search-bar {
@@ -1147,7 +1163,6 @@ hr {
 
     .flexbox,
     .flexbox-2 {
-        flex-wrap: wrap;
         margin: 20px 20px;
         gap: 15px;
     }
@@ -1155,6 +1170,28 @@ hr {
     .internal-div {
         flex: 1 1 45%;
         min-width: 200px;
+    }
+
+    .internal-div-2 {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .internal-img {
+        width: 40px;
+        margin-top: 15px;
+    }
+
+    .internal-img img {
+        width: 35px;
+    }
+
+    .flex-heading {
+        font-size: 14px;
+    }
+
+    .flex-para {
+        font-size: 14px;
     }
 
     .photosection {
@@ -1299,7 +1336,7 @@ hr {
 
     .previous-icon,
     .next-icon {
-        display: none; /* Hide navigation icons on mobile */
+        display: none;
     }
 
     .footer-container {
@@ -1443,6 +1480,28 @@ hr {
 
     .internal-div {
         flex: 1 1 100%;
+    }
+
+    .internal-div-2 {
+        margin: 10px;
+        padding: 8px;
+    }
+
+    .internal-img {
+        width: 35px;
+        margin-top: 10px;
+    }
+
+    .internal-img img {
+        width: 30px;
+    }
+
+    .flex-heading {
+        font-size: 12px;
+    }
+
+    .flex-para {
+        font-size: 12px;
     }
 
     .photosection {
