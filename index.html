@@ -33,9 +33,9 @@
                     <h1>Makaan</h1>
                 </div>
             </div>
-
+            <button class="menu-toggle">☰</button>
             <div class="Navbar-Menu">
-                <ul class="Nav-list">
+                <ul class="Nav-list" id="nav-menu">
                     <li class="Nav-menus" id="first-nav">HOME</li>
                     <li class="Nav-menus">ABOUT</li>
                     <div class="dropdown-menu">
@@ -87,7 +87,7 @@
     <!-- Search Bar Section -->
     <section class="search-bar">
         <form action="">
-            <input type="text" placeholder="Search Keyword" Class="input-form">
+            <input type="text" placeholder="Search Keyword" class="input-form">
         </form>
         <select name="" id="" class="input-form-1">
             <option selected>Property Type</option>
@@ -193,7 +193,7 @@
                 <img src="img/about.jpg" width="100%" id="image-in" alt="">
             </div>
         </div>
-        <div>
+        <div class="photo-text">
             <h1 class="photo-h1">#1 Place To Find The Perfect Property</h1>
             <p class="photo-p">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam <br> amet diam et
                 eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita <br> duo justo magna dolore erat amet
@@ -561,14 +561,14 @@
                 <h1 class="footer-section-1">Newsletter</h1>
                 <p class="home-address-1">Dolor amet sit justo amet elitr<br> clita ipsum elitr est.</p>
                 <div class="input-area">
-                    <input type="txt" placeholder="your email" id="input">
+                    <input type="text" placeholder="your email" id="input">
                     <button class="signup">Signup</button>
                 </div>
             </div>
         </div>
         <hr>
         <div class="license-section">
-            <p class="copyright">&copy;<a href="#" id="sitename">Your Site Name,</a>All Right Reserved, Designed By
+            <p class="copyright">©<a href="#" id="sitename">Your Site Name,</a>All Right Reserved, Designed By
                 Velozion</p>
             <div class="footer-menu">
                 <p class="copyright">Home </p>
@@ -584,8 +584,40 @@
         <div class="top-btn">
             <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
         </div>
-
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle menu for mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.Nav-list');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+
+            // Toggle dropdown menus on click for mobile
+            const dropdowns = document.querySelectorAll('.dropdown-menu');
+            dropdowns.forEach(dropdown => {
+                const dropdownTrigger = dropdown.querySelector('#dropdown');
+                const dropdownContent = dropdown.querySelector('#dropdown-content');
+
+                dropdownTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownContent.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
